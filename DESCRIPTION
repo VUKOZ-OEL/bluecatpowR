@@ -1,0 +1,16 @@
+Package: bluecatpawR
+Type: Package
+Title: It does what BlueCat team need
+Version: 0.1.0
+Authors@R: 
+    person(given = "Martin",
+           family = "Krucek",
+           role = c("aut", "cre"),
+           email = "first.last@example.com",
+           comment = c(ORCID = "YOUR-ORCID-ID"))
+Description: My commonly used functions
+License: What license is it under?
+Encoding: UTF-8
+LazyData: true
+RoxygenNote: 7.3.3
+Imports:

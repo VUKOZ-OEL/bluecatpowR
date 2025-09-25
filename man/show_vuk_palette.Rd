@@ -4,10 +4,17 @@
 \alias{show_vuk_palette}
 \title{show_vuk_palette}
 \usage{
-show_vuk_palette(n)
+show_vuk_palette()
+}
+\value{
+Named character vector with all palette colors (invisible).
 }
 \description{
-Function to return color pallete using VUK visual identity, maximum is 8 colors
+Display and return the full VÚKOZ palette.
+}
+\details{
+Produces a bar plot with color names and returns the palette
+as a named character vector (invisible).
 }
 \examples{
 show_vuk_palette()

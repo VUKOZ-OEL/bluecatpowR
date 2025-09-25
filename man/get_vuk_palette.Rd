@@ -4,20 +4,36 @@
 \alias{get_vuk_palette}
 \title{get_vuk_palette}
 \usage{
-get_vuk_palette(n)
+get_vuk_palette(n = 9, color = NULL)
 }
 \arguments{
-\item{int}{n colors to return}
+\item{n}{integer. Number of colors to return (>= 1).}
+
+\item{color}{optional. Either a palette color name (from `names(vuk_palette)`)
+or a valid hex code (e.g., "#123456"). If given, it will be the first color.
+The rest are selected from the official palette.}
 }
 \value{
-palette with n desired colors as named vector
+Named character vector with `n` hex colors.
 }
 \description{
-Function to return color pallete using VUK visual identity, maximum is 8 colors
+Return a color palette using VÚKOZ visual identity.
+}
+\details{
+The function selects colors in CIE Lab space to maximize mutual contrast.
+- If `n = 2` and `color = NULL`: returns the globally most distant pair.
+- If `n = 2` and `color` is given: returns this color and the palette color
+  with maximum distance to it.
+- If `n > 2`: selection starts with either the user-provided color or the
+  most distant pair, then continues with farthest-first.
 }
 \examples{
 get_vuk_palette()
+get_vuk_palette(2)
+get_vuk_palette(2, color = "VUK_modra_1")
+get_vuk_palette(3, color = "#112233")
 }
-\keyword{color}
+\keyword{VUK}
+\keyword{color,}
 \keyword{hex}
-\keyword{pallete}
+\keyword{palette,}
